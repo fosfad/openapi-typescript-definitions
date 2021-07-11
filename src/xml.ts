@@ -1,7 +1,7 @@
-export interface Xml {
+export interface XML {
+  attribute?: boolean,
   name?: string,
   namespace?: string,
   prefix?: string,
-  attribute?: boolean,
   wrapped?: boolean,
 }

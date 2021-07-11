@@ -1,5 +1,5 @@
 export interface License {
-  name: string,
   identifier?: string,
+  name: string,
   url?: string,
 }

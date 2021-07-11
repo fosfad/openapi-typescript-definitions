@@ -19,10 +19,3 @@ export interface ImplicitOAuthFlow extends CommonOAuthFlow {
 export interface ResourceOwnerPasswordOAuthFlow extends CommonOAuthFlow {
   tokenUrl: string;
 }
-
-export interface OAuthFlows {
-  authorizationCode?: AuthorizationCodeOAuthFlow;
-  clientCredentials?: ClientCredentialsOAuthFlow;
-  implicit?: ImplicitOAuthFlow;
-  password?: ResourceOwnerPasswordOAuthFlow;
-}

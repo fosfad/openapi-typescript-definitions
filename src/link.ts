@@ -1,9 +1,9 @@
-import {Server} from "./server";
+import { Server } from './server';
 
 interface CommonLink {
+  description?: string,
   parameters?: { [name: string]: string | any; };
   requestBody?: string | any,
-  description?: string,
   server?: Server
 }
 

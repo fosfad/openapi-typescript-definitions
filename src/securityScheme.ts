@@ -1,11 +1,11 @@
-import {OAuthFlows} from "./oauth";
+import { OAuthFlows } from './oauthFlows';
 
 interface CommonSecurityScheme {
   description?: string;
 }
 
 export interface ApiKeySecurityScheme extends CommonSecurityScheme {
-  in: "query" | "header" | "cookie";
+  in: 'query' | 'header' | 'cookie';
   name: string;
   type: 'apiKey';
 }
@@ -25,3 +25,5 @@ export interface OpenIdConnectSecurityScheme extends CommonSecurityScheme {
   openIdConnectUrl: string;
   type: 'openIdConnect';
 }
+
+export type SecurityScheme = ApiKeySecurityScheme | HttpSecurityScheme | OAuth2SecurityScheme | OpenIdConnectSecurityScheme;

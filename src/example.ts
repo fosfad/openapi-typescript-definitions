@@ -1,6 +1,6 @@
 interface CommonExample {
-  summary?: string,
   description?: string,
+  summary?: string
 }
 
 export interface ExampleWithValue extends CommonExample {
