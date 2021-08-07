@@ -7,7 +7,7 @@ import { PathItem } from './pathItem';
 import { Reference } from './reference';
 import { RequestBody } from './requestBody';
 import { Response } from './response';
-import { Schema } from './schema';
+import { OasSchema } from './schema';
 import { SecurityScheme } from './securityScheme';
 
 export interface Components {
@@ -19,6 +19,6 @@ export interface Components {
   pathItems?: { [key: string]: PathItem | Reference },
   requestBodies?: { [key: string]: RequestBody | Reference },
   responses?: { [key: string]: Response | Reference },
-  schemas?: { [key: string]: Schema },
+  schemas?: { [key: string]: OasSchema },
   securitySchemes?: { [key: string]: SecurityScheme | Reference }
 }

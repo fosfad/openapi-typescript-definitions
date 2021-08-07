@@ -1,7 +1,7 @@
 import { Example } from './example';
 import { MediaType } from './mediaType';
 import { Reference } from './reference';
-import { Schema } from './schema';
+import { OasSchema } from './schema';
 
 interface CommonParameter {
   content?: { [mediaType: string]: MediaType },
@@ -12,7 +12,7 @@ interface CommonParameter {
   explode?: boolean,
   name: string,
   required?: boolean,
-  schema?: Schema,
+  schema?: OasSchema,
   style?: string
 }
 
