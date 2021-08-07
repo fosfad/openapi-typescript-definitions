@@ -8,88 +8,89 @@ import {
 } from '@fosfad/json-schema-typescript-definitions';
 import { Discriminator } from './discriminator';
 import { ExternalDocumentation } from './externalDocumentation';
+import { Reference } from './reference';
 import { XML } from './xml';
 
 export interface NullOasSchema extends NullJsonSchema {
-  allOf?: Array<NullOasSchema>;
-  anyOf?: Array<NullOasSchema>;
+  allOf?: Array<NullOasSchema | Reference>;
+  anyOf?: Array<NullOasSchema | Reference>;
   externalDocs?: ExternalDocumentation,
-  not?: NullOasSchema;
-  oneOf?: Array<NullOasSchema>;
+  not?: NullOasSchema | Reference;
+  oneOf?: Array<NullOasSchema | Reference>;
   xml?: XML;
 }
 
 export interface BooleanOasSchema extends BooleanJsonSchema {
-  allOf?: Array<BooleanOasSchema>;
-  anyOf?: Array<BooleanOasSchema>;
+  allOf?: Array<BooleanOasSchema | Reference>;
+  anyOf?: Array<BooleanOasSchema | Reference>;
   externalDocs?: ExternalDocumentation,
-  not?: BooleanOasSchema;
-  oneOf?: Array<BooleanOasSchema>;
+  not?: BooleanOasSchema | Reference;
+  oneOf?: Array<BooleanOasSchema | Reference>;
   xml?: XML;
 }
 
 export interface StringOasSchema extends StringJsonSchema {
-  allOf?: Array<StringOasSchema>;
-  anyOf?: Array<StringOasSchema>;
+  allOf?: Array<StringOasSchema | Reference>;
+  anyOf?: Array<StringOasSchema | Reference>;
   externalDocs?: ExternalDocumentation,
-  not?: StringOasSchema;
-  oneOf?: Array<StringOasSchema>;
+  not?: StringOasSchema | Reference;
+  oneOf?: Array<StringOasSchema | Reference>;
   xml?: XML;
 }
 
 export interface NumberOasSchema extends NumberJsonSchema {
-  allOf?: Array<NumberOasSchema>;
-  anyOf?: Array<NumberOasSchema>;
+  allOf?: Array<NumberOasSchema | Reference>;
+  anyOf?: Array<NumberOasSchema | Reference>;
   externalDocs?: ExternalDocumentation,
-  not?: NumberOasSchema;
-  oneOf?: Array<NumberOasSchema>;
+  not?: NumberOasSchema | Reference;
+  oneOf?: Array<NumberOasSchema | Reference>;
   xml?: XML;
 }
 
 export interface IntegerOasSchema extends IntegerJsonSchema {
-  allOf?: Array<IntegerOasSchema>;
-  anyOf?: Array<IntegerOasSchema>;
+  allOf?: Array<IntegerOasSchema | Reference>;
+  anyOf?: Array<IntegerOasSchema | Reference>;
   externalDocs?: ExternalDocumentation,
-  not?: IntegerOasSchema;
-  oneOf?: Array<IntegerOasSchema>;
+  not?: IntegerOasSchema | Reference;
+  oneOf?: Array<IntegerOasSchema | Reference>;
   xml?: XML;
 }
 
 export interface ArrayOasSchema extends ArrayJsonSchema {
-  allOf?: Array<ArrayOasSchema>;
-  anyOf?: Array<ArrayOasSchema>;
-  contains?: OasSchema;
+  allOf?: Array<ArrayOasSchema | Reference>;
+  anyOf?: Array<ArrayOasSchema | Reference>;
+  contains?: OasSchema | Reference;
   externalDocs?: ExternalDocumentation,
-  items?: OasSchema;
-  not?: ArrayOasSchema;
-  oneOf?: Array<ArrayOasSchema>;
-  prefixItems?: Array<OasSchema>;
+  items?: OasSchema | Reference;
+  not?: ArrayOasSchema | Reference;
+  oneOf?: Array<ArrayOasSchema | Reference>;
+  prefixItems?: Array<OasSchema | Reference>;
   xml?: XML;
 }
 
 export interface ObjectOasSchema extends ObjectJsonSchema {
-  allOf?: Array<ObjectOasSchema>;
-  anyOf?: Array<ObjectOasSchema>;
+  allOf?: Array<ObjectOasSchema | Reference>;
+  anyOf?: Array<ObjectOasSchema | Reference>;
   discriminator?: Discriminator;
   externalDocs?: ExternalDocumentation,
-  not?: ObjectOasSchema;
-  oneOf?: Array<ObjectOasSchema>;
+  not?: ObjectOasSchema | Reference;
+  oneOf?: Array<ObjectOasSchema | Reference>;
   patternProperties?: {
-    [propertyNameRegex: string]: OasSchema;
+    [propertyNameRegex: string]: OasSchema | Reference;
   };
   properties?: {
-    [propertyName: string]: OasSchema;
+    [propertyName: string]: OasSchema | Reference;
   };
-  propertyNames?: OasSchema;
+  propertyNames?: OasSchema | Reference;
   xml?: XML;
 }
 
 export interface AnyOasSchema extends AnyJsonSchema {
-  allOf?: Array<OasSchema>;
-  anyOf?: Array<OasSchema>;
+  allOf?: Array<OasSchema | Reference>;
+  anyOf?: Array<OasSchema | Reference>;
   externalDocs?: ExternalDocumentation,
-  not?: OasSchema;
-  oneOf?: Array<OasSchema>;
+  not?: OasSchema | Reference;
+  oneOf?: Array<OasSchema | Reference>;
   xml?: XML;
 }
 
