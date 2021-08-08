@@ -30,7 +30,6 @@
     "typescript": "3.9.10"
   },
   "dependencies": {
-    "@fosfad/json-schema-typescript-definitions": "0.0.9",
-    "@fosfad/openapi-typescript-definitions": "0.0.7"
+    "@fosfad/json-schema-typescript-definitions": "0.0.11"
   }
 }

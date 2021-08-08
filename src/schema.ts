@@ -2,7 +2,7 @@ import {
   AnyJsonSchema,
   ArrayJsonSchema,
   BooleanJsonSchema,
-  IntegerJsonSchema, isAnyJsonSchema, isArrayJsonSchema,
+  IntegerJsonSchema, isArrayJsonSchema,
   isBooleanJsonSchema, isIntegerJsonSchema,
   isNullJsonSchema,
   isNumberJsonSchema, isObjectJsonSchema,
@@ -18,7 +18,7 @@ import { ExternalDocumentation } from './externalDocumentation';
 import { Reference } from './reference';
 import { XML } from './xml';
 
-export interface OasSchema extends JsonSchema {
+export interface OasSchema<T = any> extends JsonSchema<T> {
   externalDocs?: ExternalDocumentation,
   xml?: XML;
 }
@@ -34,7 +34,7 @@ export function isNullOasSchema(schema: any): schema is NullOasSchema {
   return isNullJsonSchema(schema);
 }
 
-export interface BooleanOasSchema extends BooleanJsonSchema, OasSchema {
+export interface BooleanOasSchema extends BooleanJsonSchema, OasSchema<boolean> {
   allOf?: Array<BooleanOasSchema | Reference>;
   anyOf?: Array<BooleanOasSchema | Reference>;
   not?: BooleanOasSchema | Reference;
@@ -45,7 +45,7 @@ export function isBooleanOasSchema(schema: any): schema is BooleanOasSchema {
   return isBooleanJsonSchema(schema);
 }
 
-export interface StringOasSchema extends StringJsonSchema, OasSchema {
+export interface StringOasSchema extends StringJsonSchema, OasSchema<string> {
   allOf?: Array<StringOasSchema | Reference>;
   anyOf?: Array<StringOasSchema | Reference>;
   not?: StringOasSchema | Reference;
@@ -56,7 +56,7 @@ export function isStringOasSchema(schema: any): schema is StringOasSchema {
   return isStringJsonSchema(schema);
 }
 
-export interface NumberOasSchema extends NumberJsonSchema, OasSchema {
+export interface NumberOasSchema extends NumberJsonSchema, OasSchema<number> {
   allOf?: Array<NumberOasSchema | Reference>;
   anyOf?: Array<NumberOasSchema | Reference>;
   not?: NumberOasSchema | Reference;
@@ -67,7 +67,7 @@ export function isNumberOasSchema(schema: any): schema is NumberOasSchema {
   return isNumberJsonSchema(schema);
 }
 
-export interface IntegerOasSchema extends IntegerJsonSchema, OasSchema {
+export interface IntegerOasSchema extends IntegerJsonSchema, OasSchema<number> {
   allOf?: Array<IntegerOasSchema | Reference>;
   anyOf?: Array<IntegerOasSchema | Reference>;
   not?: IntegerOasSchema | Reference;
@@ -78,7 +78,7 @@ export function isIntegerOasSchema(schema: any): schema is IntegerOasSchema {
   return isIntegerJsonSchema(schema);
 }
 
-export interface ArrayOasSchema extends ArrayJsonSchema, OasSchema {
+export interface ArrayOasSchema extends ArrayJsonSchema, OasSchema<Array<any>> {
   allOf?: Array<ArrayOasSchema | Reference>;
   anyOf?: Array<ArrayOasSchema | Reference>;
   contains?: OasSchema | Reference;
@@ -92,7 +92,7 @@ export function isArrayOasSchema(schema: any): schema is ArrayOasSchema {
   return isArrayJsonSchema(schema);
 }
 
-export interface ObjectOasSchema extends ObjectJsonSchema, OasSchema {
+export interface ObjectOasSchema extends ObjectJsonSchema, OasSchema<Record<string, any>> {
   allOf?: Array<ObjectOasSchema | Reference>;
   anyOf?: Array<ObjectOasSchema | Reference>;
   discriminator?: Discriminator;
@@ -116,8 +116,4 @@ export interface AnyOasSchema extends AnyJsonSchema, OasSchema {
   anyOf?: Array<OasSchema | Reference>;
   not?: OasSchema | Reference;
   oneOf?: Array<OasSchema | Reference>;
-}
-
-export function isAnyOasSchema(schema: any): schema is AnyOasSchema {
-  return isAnyJsonSchema(schema);
 }
