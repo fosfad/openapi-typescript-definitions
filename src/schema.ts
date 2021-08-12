@@ -93,6 +93,7 @@ export function isArrayOasSchema(schema: any): schema is ArrayOasSchema {
 }
 
 export interface ObjectOasSchema extends ObjectJsonSchema, OasSchema<Record<string, any>> {
+  additionalProperties?: OasSchema;
   allOf?: Array<ObjectOasSchema | Reference>;
   anyOf?: Array<ObjectOasSchema | Reference>;
   discriminator?: Discriminator;
