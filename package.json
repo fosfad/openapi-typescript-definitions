@@ -2,10 +2,8 @@
   "name": "@fosfad/openapi-typescript-definitions",
   "description": "Types and interfaces for writing valid OpenAPI specification in TypeScript.",
   "repository": "github:fosfad/openapi-typescript-definitions",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "**/*.d.ts"
   ],
   "author": {
     "email": "petr@flaks.dev",
@@ -17,19 +15,20 @@
   },
   "homepage": "https://github.com/fosfad/openapi-typescript-definitions",
   "devDependencies": {
-    "@types/node": "15.12.4",
-    "@typescript-eslint/eslint-plugin": "4.28.0",
-    "@typescript-eslint/parser": "4.28.0",
-    "eslint": "7.29.0",
-    "eslint-config-airbnb-typescript": "12.3.1",
-    "eslint-plugin-import": "2.23.4",
-    "eslint-plugin-sort-keys-fix": "1.1.1",
-    "eslint-plugin-typescript-sort-keys": "1.7.0",
-    "eslint-plugin-unused-imports": "1.1.1",
-    "ts-node": "10.0.0",
-    "typescript": "3.9.10"
+    "@types/node": "16.7.1",
+    "@typescript-eslint/eslint-plugin": "4.29.2",
+    "@typescript-eslint/parser": "4.29.2",
+    "eslint": "7.32.0",
+    "eslint-plugin-import": "2.24.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-sort-keys-fix": "1.1.2",
+    "eslint-plugin-typescript-sort-keys": "1.8.0",
+    "eslint-plugin-unused-imports": "1.1.4",
+    "prettier": "2.4.0",
+    "ts-node": "10.2.1",
+    "typescript": "4.3.5"
   },
   "dependencies": {
-    "@fosfad/json-schema-typescript-definitions": "0.0.11"
+    "@fosfad/json-schema-typescript-definitions": "0.0.13"
   }
 }
