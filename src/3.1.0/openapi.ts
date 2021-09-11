@@ -11,14 +11,14 @@ import { Tag } from './tag';
 export const openapiVersion = '3.1.0';
 
 export interface OpenAPI {
-  components?: Components,
-  externalDocs?: ExternalDocumentation,
-  info: Info,
-  jsonSchemaDialect?: string,
-  openapi: typeof openapiVersion,
-  paths: Paths,
-  security?: SecurityRequirement[],
-  servers?: Server[],
-  tags?: Tag[]
-  webhooks?: { [webhookName: string]: PathItem | Reference }
+  components?: Components;
+  externalDocs?: ExternalDocumentation;
+  info: Info;
+  jsonSchemaDialect?: string;
+  openapi: typeof openapiVersion;
+  paths: Paths;
+  security?: SecurityRequirement[];
+  servers?: Server[];
+  tags?: Tag[];
+  webhooks?: { [webhookName: string]: PathItem | Reference };
 }

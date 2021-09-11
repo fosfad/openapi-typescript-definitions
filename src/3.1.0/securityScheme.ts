@@ -26,4 +26,8 @@ export interface OpenIdConnectSecurityScheme extends CommonSecurityScheme {
   type: 'openIdConnect';
 }
 
-export type SecurityScheme = ApiKeySecurityScheme | HttpSecurityScheme | OAuth2SecurityScheme | OpenIdConnectSecurityScheme;
+export type SecurityScheme =
+  | ApiKeySecurityScheme
+  | HttpSecurityScheme
+  | OAuth2SecurityScheme
+  | OpenIdConnectSecurityScheme;

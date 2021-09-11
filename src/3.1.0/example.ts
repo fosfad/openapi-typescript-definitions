@@ -1,14 +1,14 @@
 interface CommonExample {
-  description?: string,
-  summary?: string
+  description?: string;
+  summary?: string;
 }
 
 export interface ExampleWithValue extends CommonExample {
-  value: any,
+  value: any;
 }
 
 export interface ExampleWithExternalValue extends CommonExample {
-  externalValue: string,
+  externalValue: string;
 }
 
 export type Example = ExampleWithValue | ExampleWithExternalValue;

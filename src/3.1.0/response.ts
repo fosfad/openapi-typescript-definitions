@@ -4,10 +4,10 @@ import { MediaType } from './mediaType';
 import { Reference } from './reference';
 
 export interface Response {
-  content?: { [mediaType: string]: MediaType },
-  description: string,
+  content?: { [mediaType: string]: MediaType };
+  description: string;
   headers?: {
-    [headerName: string]: Header | Reference
-  },
-  links?: { [linkName: string]: Link | Reference }
+    [headerName: string]: Header | Reference;
+  };
+  links?: { [linkName: string]: Link | Reference };
 }

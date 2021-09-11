@@ -4,8 +4,8 @@ import { Reference } from './reference';
 import { OasSchema } from './schema';
 
 export interface MediaType {
-  encoding?: { [propertyName: string]: Encoding },
+  encoding?: { [propertyName: string]: Encoding };
   example?: any;
-  examples?: { [key: string]: Example | Reference },
+  examples?: { [key: string]: Example | Reference };
   schema?: OasSchema;
 }
