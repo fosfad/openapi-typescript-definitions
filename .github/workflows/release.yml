@@ -31,7 +31,7 @@ jobs:
         run: npm ci --prefer-offline --cache=./.npm
 
       - name: Build library
-        run: npx tsc --outDir 3.1.0 # replace "3.1.0" with "." when another OpenAPI version will be added
+        run: npx tsc --outDir .
 
       - name: Set version in package.json
         run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
