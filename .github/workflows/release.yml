@@ -19,14 +19,17 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Set version in package.json
-        run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
+      - name: Install npm dependencies
+        run: npm ci --prefer-offline --cache=./.npm
+
+      - name: Build library
+        run: npx tsc --outDir .
 
       - name: Set npm credentials
         run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
 
-      - name: Move files
-        run: mv src/* .
+      - name: Set version in package.json
+        run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
 
       - name: Publish to npm Registry
         run: npm publish --access public
