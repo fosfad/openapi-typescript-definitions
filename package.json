@@ -32,6 +32,6 @@
     "typescript": "4.3.5"
   },
   "dependencies": {
-    "@fosfad/json-schema-typescript-definitions": "0.0.16"
+    "@fosfad/json-schema-typescript-definitions": "0.0.17"
   }
 }
