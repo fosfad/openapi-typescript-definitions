@@ -1,6 +1,6 @@
 import { Discriminator } from './discriminator';
 import { ExternalDocumentation } from './externalDocumentation';
-import {JsonSchema} from '@fosfad/json-schema-typescript-definitions/2020-12';
+import { JsonSchema } from '@fosfad/json-schema-typescript-definitions/2020-12';
 import { XML } from './xml';
 
 export type OasSchema = JsonSchema & {
