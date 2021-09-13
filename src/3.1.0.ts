@@ -1,4 +1,4 @@
-import { JsonSchema } from '@fosfad/json-schema-typescript-definitions/2020-12';
+import { JsonSchemaBoolean, JsonSchemaObject } from '@fosfad/json-schema-typescript-definitions/2020-12';
 
 export interface Callback {
   [expression: string]: PathItem | Reference;
@@ -220,7 +220,7 @@ export interface Responses {
   [httpStatusCode: string]: Response | Reference;
 }
 
-export type Schema = JsonSchema & {
+interface OasSchema extends JsonSchemaObject {
   $defs?: { [key: string]: Schema };
   additionalProperties?: Schema;
   allOf?: Array<Schema>;
@@ -242,7 +242,9 @@ export type Schema = JsonSchema & {
   unevaluatedItems?: Schema;
   unevaluatedProperties?: Schema;
   xml?: XML;
-};
+}
+
+export type Schema = JsonSchemaBoolean | OasSchema;
 
 export interface SecurityRequirement {
   [name: string]: string[];
