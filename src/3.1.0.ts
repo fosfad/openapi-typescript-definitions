@@ -220,7 +220,7 @@ export interface Responses {
   [httpStatusCode: string]: Response | Reference;
 }
 
-interface OasSchema extends JsonSchemaObject {
+export interface SchemaObject extends JsonSchemaObject {
   $defs?: { [key: string]: Schema };
   additionalProperties?: Schema;
   allOf?: Array<Schema>;
@@ -244,7 +244,7 @@ interface OasSchema extends JsonSchemaObject {
   xml?: XML;
 }
 
-export type Schema = JsonSchemaBoolean | OasSchema;
+export type Schema = JsonSchemaBoolean | SchemaObject;
 
 export interface SecurityRequirement {
   [name: string]: string[];
