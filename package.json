@@ -2,7 +2,6 @@
   "name": "@fosfad/openapi-typescript-definitions",
   "description": "Types and interfaces for writing valid OpenAPI specification in TypeScript.",
   "repository": "github:fosfad/openapi-typescript-definitions",
-  "types": "index.d.ts",
   "files": [
     "**/*.d.ts"
   ],
