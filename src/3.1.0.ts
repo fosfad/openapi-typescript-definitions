@@ -5,85 +5,85 @@ export interface Callback {
 }
 
 export interface Components {
-  callbacks?: { [key: string]: Callback | Reference };
-  examples?: { [key: string]: Example | Reference };
-  headers?: { [key: string]: Header | Reference };
-  links?: { [key: string]: Link | Reference };
-  parameters?: { [key: string]: Parameter | Reference };
-  pathItems?: { [key: string]: PathItem | Reference };
-  requestBodies?: { [key: string]: RequestBody | Reference };
-  responses?: { [key: string]: Response | Reference };
-  schemas?: { [key: string]: Schema };
-  securitySchemes?: { [key: string]: SecurityScheme | Reference };
+  callbacks?: undefined | { [key: string]: Callback | Reference };
+  examples?: undefined | { [key: string]: Example | Reference };
+  headers?: undefined | { [key: string]: Header | Reference };
+  links?: undefined | { [key: string]: Link | Reference };
+  parameters?: undefined | { [key: string]: Parameter | Reference };
+  pathItems?: undefined | { [key: string]: PathItem | Reference };
+  requestBodies?: undefined | { [key: string]: RequestBody | Reference };
+  responses?: undefined | { [key: string]: Response | Reference };
+  schemas?: undefined | { [key: string]: Schema };
+  securitySchemes?: undefined | { [key: string]: SecurityScheme | Reference };
 }
 
 export interface Contact {
-  email?: string;
-  name?: string;
-  url?: string;
+  email?: undefined | string;
+  name?: undefined | string;
+  url?: undefined | string;
 }
 
 export interface Discriminator {
-  mapping?: { [discriminatorValue: string]: string };
+  mapping?: undefined | { [discriminatorValue: string]: string };
   propertyName: string;
 }
 
 export interface Encoding {
-  allowReserved?: boolean;
-  contentType?: string;
-  explode?: boolean;
-  headers?: { [headerName: string]: Header | Reference };
-  style?: string;
+  allowReserved?: undefined | boolean;
+  contentType?: undefined | string;
+  explode?: undefined | boolean;
+  headers?: undefined | { [headerName: string]: Header | Reference };
+  style?: undefined | string;
 }
 
 export interface Example {
-  description?: string;
-  externalValue?: string;
-  summary?: string;
-  value?: any;
+  description?: undefined | string;
+  externalValue?: undefined | string;
+  summary?: undefined | string;
+  value?: undefined | any;
 }
 
 export interface ExternalDocumentation {
-  description?: string;
+  description?: undefined | string;
   url: string;
 }
 
 export type Header = Omit<HeaderParameter, 'in' | 'name'>;
 
 export interface Info {
-  contact?: Contact;
-  description?: string;
-  license?: License;
-  summary?: string;
-  termsOfService?: string;
+  contact?: undefined | Contact;
+  description?: undefined | string;
+  license?: undefined | License;
+  summary?: undefined | string;
+  termsOfService?: undefined | string;
   title: string;
   version: string;
 }
 
 export interface License {
-  identifier?: string;
+  identifier?: undefined | string;
   name: string;
-  url?: string;
+  url?: undefined | string;
 }
 
 export interface Link {
-  description?: string;
-  operationId?: string;
-  operationRef?: string;
-  parameters?: { [name: string]: string | any };
-  requestBody?: string | any;
-  server?: Server;
+  description?: undefined | string;
+  operationId?: undefined | string;
+  operationRef?: undefined | string;
+  parameters?: undefined | { [name: string]: string | any };
+  requestBody?: undefined | string | any;
+  server?: undefined | Server;
 }
 
 export interface MediaType {
-  encoding?: { [propertyName: string]: Encoding };
-  example?: any;
-  examples?: { [key: string]: Example | Reference };
-  schema?: Schema;
+  encoding?: undefined | { [propertyName: string]: Encoding };
+  example?: undefined | any;
+  examples?: undefined | { [key: string]: Example | Reference };
+  schema?: undefined | Schema;
 }
 
 interface CommonOAuthFlow {
-  refreshUrl?: string;
+  refreshUrl?: undefined | string;
   scopes: { [scopeName: string]: string };
 }
 
@@ -105,58 +105,58 @@ export interface ResourceOwnerPasswordOAuthFlow extends CommonOAuthFlow {
 }
 
 export interface OAuthFlows {
-  authorizationCode?: AuthorizationCodeOAuthFlow;
-  clientCredentials?: ClientCredentialsOAuthFlow;
-  implicit?: ImplicitOAuthFlow;
-  password?: ResourceOwnerPasswordOAuthFlow;
+  authorizationCode?: undefined | AuthorizationCodeOAuthFlow;
+  clientCredentials?: undefined | ClientCredentialsOAuthFlow;
+  implicit?: undefined | ImplicitOAuthFlow;
+  password?: undefined | ResourceOwnerPasswordOAuthFlow;
 }
 
 export const openapiVersion = '3.1.0';
 
 export interface OpenAPI {
-  components?: Components;
-  externalDocs?: ExternalDocumentation;
+  components?: undefined | Components;
+  externalDocs?: undefined | ExternalDocumentation;
   info: Info;
-  jsonSchemaDialect?: string;
+  jsonSchemaDialect?: undefined | string;
   openapi: typeof openapiVersion;
   paths: Paths;
-  security?: SecurityRequirement[];
-  servers?: Server[];
-  tags?: Tag[];
-  webhooks?: { [webhookName: string]: PathItem | Reference };
+  security?: undefined | SecurityRequirement[];
+  servers?: undefined | Server[];
+  tags?: undefined | Tag[];
+  webhooks?: undefined | { [webhookName: string]: PathItem | Reference };
 }
 
 export interface Operation {
-  callbacks?: { [callbackIdentifier: string]: Callback | Reference };
-  deprecated?: boolean;
-  description?: string;
-  externalDocs?: ExternalDocumentation;
-  operationId?: string;
-  parameters?: Array<Parameter | Reference>;
-  requestBody?: RequestBody | Reference;
-  responses?: Responses;
-  security?: Array<SecurityRequirement>;
-  servers?: Array<Server>;
-  summary?: string;
-  tags?: Array<string>;
+  callbacks?: undefined | { [callbackIdentifier: string]: Callback | Reference };
+  deprecated?: undefined | boolean;
+  description?: undefined | string;
+  externalDocs?: undefined | ExternalDocumentation;
+  operationId?: undefined | string;
+  parameters?: undefined | Array<Parameter | Reference>;
+  requestBody?: undefined | RequestBody | Reference;
+  responses?: undefined | Responses;
+  security?: undefined | Array<SecurityRequirement>;
+  servers?: undefined | Array<Server>;
+  summary?: undefined | string;
+  tags?: undefined | Array<string>;
 }
 
 interface CommonParameter {
-  content?: { [mediaType: string]: MediaType };
-  deprecated?: boolean;
-  description?: string;
-  example?: any;
-  examples?: { [key: string]: Example | Reference };
-  explode?: boolean;
+  content?: undefined | { [mediaType: string]: MediaType };
+  deprecated?: undefined | boolean;
+  description?: undefined | string;
+  example?: undefined | any;
+  examples?: undefined | { [key: string]: Example | Reference };
+  explode?: undefined | boolean;
   name: string;
-  required?: boolean;
-  schema?: Schema;
-  style?: string;
+  required?: undefined | boolean;
+  schema?: undefined | Schema;
+  style?: undefined | string;
 }
 
 export interface QueryParameter extends CommonParameter {
-  allowEmptyValue?: boolean;
-  allowReserved?: boolean;
+  allowEmptyValue?: undefined | boolean;
+  allowReserved?: undefined | boolean;
   in: 'query';
 }
 
@@ -176,19 +176,19 @@ export interface CookieParameter extends CommonParameter {
 export type Parameter = QueryParameter | HeaderParameter | PathParameter | CookieParameter;
 
 export interface PathItem {
-  $ref?: string;
-  delete?: Operation;
-  description?: string;
-  get?: Operation;
-  head?: Operation;
-  options?: Operation;
-  parameters?: Array<Parameter | Reference>;
-  patch?: Operation;
-  post?: Operation;
-  put?: Operation;
-  servers?: Server[];
-  summary?: string;
-  trace?: Operation;
+  $ref?: undefined | string;
+  delete?: undefined | Operation;
+  description?: undefined | string;
+  get?: undefined | Operation;
+  head?: undefined | Operation;
+  options?: undefined | Operation;
+  parameters?: undefined | Array<Parameter | Reference>;
+  patch?: undefined | Operation;
+  post?: undefined | Operation;
+  put?: undefined | Operation;
+  servers?: undefined | Server[];
+  summary?: undefined | string;
+  trace?: undefined | Operation;
 }
 
 export interface Paths {
@@ -197,23 +197,25 @@ export interface Paths {
 
 export interface Reference {
   $ref: string;
-  description?: string;
-  summary?: string;
+  description?: undefined | string;
+  summary?: undefined | string;
 }
 
 export interface RequestBody {
   content: { [mediaType: string]: MediaType };
-  description?: string;
-  required?: boolean;
+  description?: undefined | string;
+  required?: undefined | boolean;
 }
 
 export interface Response {
-  content?: { [mediaType: string]: MediaType };
+  content?: undefined | { [mediaType: string]: MediaType };
   description: string;
-  headers?: {
-    [headerName: string]: Header | Reference;
-  };
-  links?: { [linkName: string]: Link | Reference };
+  headers?:
+    | undefined
+    | {
+        [headerName: string]: Header | Reference;
+      };
+  links?: undefined | { [linkName: string]: Link | Reference };
 }
 
 export interface Responses {
@@ -221,27 +223,27 @@ export interface Responses {
 }
 
 export interface SchemaObject extends JsonSchemaObject {
-  $defs?: { [key: string]: Schema };
-  additionalProperties?: Schema;
-  allOf?: Array<Schema>;
-  anyOf?: Array<Schema>;
-  contains?: Schema;
-  dependentSchemas?: { [key: string]: Schema };
-  discriminator?: Discriminator;
-  else?: Schema;
-  externalDocs?: ExternalDocumentation;
-  if?: Schema;
-  items?: Schema;
-  not?: Schema;
-  oneOf?: Array<Schema>;
-  patternProperties?: { [propertyNameRegex: string]: Schema };
-  prefixItems?: Array<Schema>;
-  properties?: { [propertyName: string]: Schema };
-  propertyNames?: Schema;
-  then?: Schema;
-  unevaluatedItems?: Schema;
-  unevaluatedProperties?: Schema;
-  xml?: XML;
+  $defs?: undefined | { [key: string]: Schema };
+  additionalProperties?: undefined | Schema;
+  allOf?: undefined | Array<Schema>;
+  anyOf?: undefined | Array<Schema>;
+  contains?: undefined | Schema;
+  dependentSchemas?: undefined | { [key: string]: Schema };
+  discriminator?: undefined | Discriminator;
+  else?: undefined | Schema;
+  externalDocs?: undefined | ExternalDocumentation;
+  if?: undefined | Schema;
+  items?: undefined | Schema;
+  not?: undefined | Schema;
+  oneOf?: undefined | Array<Schema>;
+  patternProperties?: undefined | { [propertyNameRegex: string]: Schema };
+  prefixItems?: undefined | Array<Schema>;
+  properties?: undefined | { [propertyName: string]: Schema };
+  propertyNames?: undefined | Schema;
+  then?: undefined | Schema;
+  unevaluatedItems?: undefined | Schema;
+  unevaluatedProperties?: undefined | Schema;
+  xml?: undefined | XML;
 }
 
 export type Schema = JsonSchemaBoolean | SchemaObject;
@@ -251,7 +253,7 @@ export interface SecurityRequirement {
 }
 
 interface CommonSecurityScheme {
-  description?: string;
+  description?: undefined | string;
 }
 
 export interface ApiKeySecurityScheme extends CommonSecurityScheme {
@@ -261,7 +263,7 @@ export interface ApiKeySecurityScheme extends CommonSecurityScheme {
 }
 
 export interface HttpSecurityScheme extends CommonSecurityScheme {
-  bearerFormat?: string;
+  bearerFormat?: undefined | string;
   scheme: string;
   type: 'http';
 }
@@ -283,27 +285,27 @@ export type SecurityScheme =
   | OpenIdConnectSecurityScheme;
 
 export interface Server {
-  description?: string;
+  description?: undefined | string;
   url: string;
-  variables?: { [variableName: string]: ServerVariable };
+  variables?: undefined | { [variableName: string]: ServerVariable };
 }
 
 export interface ServerVariable {
   default: string;
-  description?: string;
-  enum?: string[];
+  description?: undefined | string;
+  enum?: undefined | string[];
 }
 
 export interface Tag {
-  description?: string;
-  externalDocs?: ExternalDocumentation;
+  description?: undefined | string;
+  externalDocs?: undefined | ExternalDocumentation;
   name: string;
 }
 
 export interface XML {
-  attribute?: boolean;
-  name?: string;
-  namespace?: string;
-  prefix?: string;
-  wrapped?: boolean;
+  attribute?: undefined | boolean;
+  name?: undefined | string;
+  namespace?: undefined | string;
+  prefix?: undefined | string;
+  wrapped?: undefined | boolean;
 }
