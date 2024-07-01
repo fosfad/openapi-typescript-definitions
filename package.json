@@ -28,7 +28,7 @@
     "eslint-plugin-unused-imports": "1.1.5",
     "prettier": "3.3.0",
     "ts-node": "10.9.2",
-    "typescript": "4.4.3"
+    "typescript": "5.5.3"
   },
   "dependencies": {
     "@fosfad/json-schema-typescript-definitions": "0.2.0"
